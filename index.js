@@ -54,16 +54,45 @@ inquirer
   .then((response) => {
     console.log('response', response)
   
+const userInput = `
+# ${response.Title}
 
+## Description
 
-const userInput =
-    `
+${response.Description}
+
+## Table of Contents
+
+${response.ToC}
+
+## Installation
+
+${response.Installation}
+
+## Usage
+
+${response.Usage}
+
+## License
+
+${response.License}
+
+## Contributing
+
+${response.Contributing}
+
+## Tests
+
+${response.Tests}
+
+## Questions
+
+${response.Questions}
   `;
 
   fs.writeFile('README.md', userInput, (err) =>
    err ? console.error(err) : console.log('You have created your personalized Readme file!')
- );
-
+  );
 
 });
 
