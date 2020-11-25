@@ -5,6 +5,16 @@ inquirer
   .prompt([
     {
       type: 'input',
+      message: 'What is your github username?',
+      name: 'Username',
+    },
+    {
+      type: 'input',
+      message: 'What is your email address?',
+      name: 'Email',
+    },
+    {
+      type: 'input',
       message: 'What is the Title of your application?',
       name: 'Title',
     },
@@ -14,39 +24,30 @@ inquirer
       name: 'Description',
     },
     {
-      type: 'input',
-      message: 'Please write a table of contents for your application.',
-      name: 'ToC',
+      type: 'list',
+      message: 'Which is the license of your application?',
+      name: 'License',
+      choices: ["MIT","LGPL","Permissive","Copyleft","Public Domain"]
     },
     {
       type: 'input',
-      message: 'How do you install your application?',
+      message: 'What command should be run to install dependencies?',
       name: 'Installation',
     },
     {
       type: 'input',
-      message: 'What is your application used for?',
-      name: 'Usage',
-    },
-    {
-      type: 'input',
-      message: 'What is the license of your application?',
-      name: 'License',
-    },
-    {
-      type: 'input',
-      message: 'Who were the contributors of the application?',
-      name: 'Contributing',
-    },
-    {
-      type: 'input',
-      message: 'Please put the tests of the application here.',
+      message: 'What command should be run to run tests?',
       name: 'Tests',
     },
     {
       type: 'input',
-      message: 'Put any questions for the application here.',
-      name: 'Questions',
+      message: 'What does the user need to know about contributing to the repo?',
+      name: 'Contributing',
+    },
+    {
+      type: 'input',
+      message: 'What does the user need to know about the repo?',
+      name: 'Usage',
     },
 
   ])
@@ -55,7 +56,7 @@ inquirer
     console.log('response', response)
   
 const userInput = `
-# ${response.Title}
+# Title ${response.Title}
 
 ## Description
 
@@ -63,7 +64,21 @@ ${response.Description}
 
 ## Table of Contents
 
-${response.ToC}
+* [Title](#Title)
+
+* [Description](#Description)
+
+* [Installation](#Installation)
+
+* [Usage](#Usage)
+
+* [License](#License)
+
+* [Contributing](#Contributing)
+
+* [Tests](#Tests)
+
+* [Contact](#Contact)
 
 ## Installation
 
@@ -85,9 +100,12 @@ ${response.Contributing}
 
 ${response.Tests}
 
-## Questions
+## Contact 
 
-${response.Questions}
+* ${response.Username}
+
+* ${response.Email}
+
   `;
 
   fs.writeFile('README.md', userInput, (err) =>
