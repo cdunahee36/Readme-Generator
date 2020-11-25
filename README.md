@@ -1,15 +1,53 @@
-# Readme-Generator
 
+# Title Hello World
 
 ## Description
 
-* The application allows the user to input answers to promts. 
-When the user does so, the application will create a professional readme file for them.
+This application creates a readme file for you!
 
-## Usage
+## Table of Contents
 
-* The application can be used when somebody does not have the time to create a readme file.
+* [Title](#Title)
+
+* [Description](#Description)
+
+* [Installation](#Installation)
+
+* [Usage](#Usage)
+
+* [License](#License)
+
+* [Contributing](#Contributing)
+
+* [Tests](#Tests)
+
+* [Contact](#Contact)
 
 ## Installation
 
-* The application cannot be installed.
+npm install
+
+## Usage
+
+Its free for anyone to use.
+
+## License
+
+Public Domain
+
+## Contributing
+
+Always push to the main branch.
+
+## Tests
+
+npm test
+
+## Contact 
+
+* cdunahee36
+
+* dunahee10@gmail.com
+
+
+
